@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 		v.name = "Server DB"
 	end
   	config.vm.hostname = "star-db"
-        config.vm.network "public_network", bridge: "enp7s0", ip: "10.10.1.60"   
+        config.vm.network "public_network", bridge: "<interface>", ip: "<ip>"   
         config.vm.network "forwarded_port", guest: 3306, host: 3306
         
         # Install e config mariaDB 
