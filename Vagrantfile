@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
         sudo apt-get install mariadb-server -y
 
         
-        sudo mysqladmin -u root password 'DEV@DEV'
+        sudo mysqladmin -u root password 'Ldi2019*'
         sudo mysqladmin flush-privileges
 
         
@@ -29,9 +29,8 @@ Vagrant.configure("2") do |config|
         sudo systemctl restart mysql.service
 
         
-        SQL="create user 'devEnv'@'%' identified by 'DEV@ENV'; Grant all privileges on *.* to 'devEnv'; FLUSH PRIVILEGES;"
-        mysql -u root -p'DEV@DEV' -e"$SQL" mysql
+        SQL="create user 'devEnv'@'%' identified by 'Ldi2019*'; Grant all privileges on *.* to 'devEnv'; FLUSH PRIVILEGES;"
+        mysql -u root -p'Ldi2019*' -e"$SQL" mysql
         SCRIPT
         config.vm.provision "shell", inline: $script	
-	config.disksize.size = "50GB"  	
 end
