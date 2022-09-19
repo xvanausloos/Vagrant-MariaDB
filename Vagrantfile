@@ -5,10 +5,11 @@ Vagrant.configure("2") do |config|
 		v.cpus = 1
 		v.name = "Server DB"
 	end
-  	config.vm.hostname = "star-db"
-        config.vm.network "public_network", bridge: "<interface>", ip: "<ip>"   
-        config.vm.network "forwarded_port", guest: 3306, host: 3306
-        
+  	
+	config.vm.define :mariadbldi do |mariadbldi|
+		config.vm.hostname = "mariadbldi.ldi.com"
+        	config.vm.network :private_network, ip: "192.168.68.200"
+        end
         # Install e config mariaDB 
         $script = <<-SCRIPT
         sudo apt-get update
